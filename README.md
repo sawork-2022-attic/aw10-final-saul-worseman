@@ -196,3 +196,10 @@ Please design tests/experiements to demostrate that your system fulfills such re
 
 + 我感受到了从命令式编程到声明式编程学习曲线的**陡峭**，因为reactive programing这一套给我的感觉就是**放任操作系统来进行并发**，是上学期java课最后讲并发讲到最后一种**无锁设计**的感觉。同时从流，对象，消费，这些个概念，也让它强迫码农真正去面向对象思考。
 
+### 参考网站
+
+https://github.com/austinwang1121/lite-rx-api-hands-on/
+
+https://tech.io/playgrounds/929/reactive-programming-with-reactor-3
+
+**https://gatheca-george.medium.com/spring-webflux-using-relational-database-mysql-postgresql-fcc5e487f57f**
