@@ -2,14 +2,13 @@ package com.example.batch.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import javax.persistence.*;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Id;
 import java.util.List;
 
-@Entity
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Table(name = "products")
 public class AmazonProduct {
 
     @Id
@@ -18,6 +17,8 @@ public class AmazonProduct {
     private String main_cat;
 
     private String title;
+
+    private String price;
 
 
     @ElementCollection
@@ -64,5 +65,12 @@ public class AmazonProduct {
 
     public void setImageURLHighRes(List<String> imageURLHighRes) {
         this.imageURLHighRes = imageURLHighRes;
+    }
+
+    public String getPrice() {
+        if (!price.startsWith("$"))
+            return "";
+        else
+            return price;
     }
 }

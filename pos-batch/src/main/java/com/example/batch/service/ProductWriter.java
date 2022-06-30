@@ -1,6 +1,7 @@
 package com.example.batch.service;
 
 import com.example.batch.model.AmazonProduct;
+import com.example.batch.model.Product;
 import com.example.batch.repository.ProductRepository;
 import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.StepExecution;
@@ -10,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class ProductWriter implements ItemWriter<AmazonProduct>, StepExecutionListener {
+public class ProductWriter implements ItemWriter<Product>, StepExecutionListener {
 
     @Autowired
     ProductRepository productRepository;
@@ -26,12 +27,7 @@ public class ProductWriter implements ItemWriter<AmazonProduct>, StepExecutionLi
     }
 
     @Override
-    public void write(List<? extends AmazonProduct> list) throws Exception {
-        // System.out.println(list.size());
-//        list.stream().forEach(System.out::println);
-//        System.out.println("chunk written");
+    public void write(List<? extends Product> list) throws Exception {
         productRepository.saveAll(list);
-//        List<Product> li = productRepository.findAll();
-        //System.out.println(li.size());
     }
 }

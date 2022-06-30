@@ -1,7 +1,6 @@
-package com.example.poscarts.repository;
+package com.mircopos.poscarts.repository;
 
-import com.example.poscarts.model.Item;
-import org.springframework.data.r2dbc.repository.Query;
+import com.mircopos.poscarts.model.Item;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;

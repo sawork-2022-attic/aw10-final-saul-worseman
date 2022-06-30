@@ -1,4 +1,4 @@
-package com.mircopos.posorder.model;
+package com.mircopos.poscarts.model;
 
 
 import lombok.AllArgsConstructor;

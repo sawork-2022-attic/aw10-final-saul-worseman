@@ -1,9 +1,8 @@
-package com.example.poscarts.model;
+package com.mircopos.poscarts.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.annotation.Transient;
@@ -11,7 +10,6 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,7 +20,7 @@ import java.util.List;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    static long Id = 0;
+    static long Id = 1;
     private Long cartId;
 
     @ReadOnlyProperty

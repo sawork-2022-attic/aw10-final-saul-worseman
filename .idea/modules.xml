@@ -3,6 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/aw10-final-saul-worseman.iml" filepath="$PROJECT_DIR$/.idea/aw10-final-saul-worseman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-batch/batch.iml" filepath="$PROJECT_DIR$/pos-batch/batch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-api/pos-api.iml" filepath="$PROJECT_DIR$/pos-api/pos-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-carts/pos-carts.iml" filepath="$PROJECT_DIR$/pos-carts/pos-carts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-discovery/pos-discovery.iml" filepath="$PROJECT_DIR$/pos-discovery/pos-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-gateway/pos-gateway.iml" filepath="$PROJECT_DIR$/pos-gateway/pos-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-order/pos-order.iml" filepath="$PROJECT_DIR$/pos-order/pos-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-products/pos-products.iml" filepath="$PROJECT_DIR$/pos-products/pos-products.iml" />
     </modules>
   </component>
 </project>

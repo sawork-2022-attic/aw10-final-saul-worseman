@@ -1,16 +1,44 @@
-eureka:
-    client:
-        service-url:
-            defaultZone: http://localhost:8888/eureka/
 server:
-    port: 8080
+  port: 8080
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 200
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
 spring:
-    application:
-        name: pos-gateway
-    cloud:
-        gateway:
-            routes: '[{id=pos-products-service, uri=lb://pos-products, predicates=[Path=/api/products/**,
-                Method=GET], filters=[{name=Hystrix, args={name=fallbackCommand, fallbackUri=forward:/fallback/message}}]},
-                {id=pos-carts-service, uri=lb://pos-carts, predicates=[Path=/api/cart/**,
-                Method=[GET, POST, PUT, DELETE]], filters=[{name=Hystrix, args={name=fallbackCommand,
-                fallbackUri=forward:/fallback/message}}]}]'
+  application:
+    name: pos-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: pos-carts
+          uri: lb://pos-carts
+          predicates:
+            - Path=/api/carts/**
+          filters:
+            - name: Hystrix
+              args:
+                name: fallbackCommand
+                fallbackUri: forward:/fallback/message
+
+        - id: pos-products
+          uri: lb://pos-products
+          predicates:
+            - Path=/api/products/**
+            - Method=GET
+          filters:
+            - name: Hystrix
+              args:
+                name: fallbackCommand
+                fallbackUri: forward:/fallback/message
+
+
+
+

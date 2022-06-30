@@ -1,4 +1,4 @@
-package com.example.poscarts.model;
+package com.mircopos.poscarts.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

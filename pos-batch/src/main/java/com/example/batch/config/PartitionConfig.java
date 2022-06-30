@@ -1,6 +1,7 @@
 package com.example.batch.config;
 
 import com.example.batch.model.AmazonProduct;
+import com.example.batch.model.Product;
 import com.example.batch.service.JsonFileReader;
 import com.example.batch.service.ProductProcessor;
 import com.example.batch.service.ProductWriter;
@@ -50,13 +51,13 @@ public class PartitionConfig {
     public Partitioner partitioner() throws Exception {
         MultiResourcePartitioner partitioner = new MultiResourcePartitioner();
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        partitioner.setResources(resolver.getResources("file:/home/saul/aw06-saul-worseman/src/main/resources/data/SplitData/x*"));
+        partitioner.setResources(resolver.getResources("file:/home/saul/IdeaProjects/aw10-final-saul-worseman/pos-batch/src/main/resources/data/SplitData/x*"));
         return partitioner;
     }
 
     @Bean
     public Step slaveStep() throws Exception {
-        return stepBuilderFactory.get("slaveStep").<JsonNode, AmazonProduct>chunk(10)
+        return stepBuilderFactory.get("slaveStep").<JsonNode, Product>chunk(10)
                 .reader(itemReader(null)).processor(itemProcessor()).writer(itemWriter()).build();
     }
 
@@ -67,12 +68,12 @@ public class PartitionConfig {
     }
 
     @Bean
-    public ItemProcessor<JsonNode, AmazonProduct> itemProcessor() {
+    public ItemProcessor<JsonNode, Product> itemProcessor() {
         return new ProductProcessor();
     }
 
     @Bean
-    public ItemWriter<AmazonProduct> itemWriter() {
+    public ItemWriter<Product> itemWriter() {
         return new ProductWriter();
     }
 

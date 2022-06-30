@@ -1,4 +1,4 @@
-package com.example.poscarts.model;
+package com.mircopos.poscarts.model;
 
 import lombok.*;
 
@@ -11,7 +11,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @Table("items")
 public class Item {
-    static long itemNum = 0;
+    static volatile long itemNum = 1;
 
     @Id
     private Long itemId;

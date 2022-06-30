@@ -1,9 +1,11 @@
-package com.mircopos.posproducts;
+package com.micropos.posproducts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class PosProductsApplication {
 
     public static void main(String[] args) {

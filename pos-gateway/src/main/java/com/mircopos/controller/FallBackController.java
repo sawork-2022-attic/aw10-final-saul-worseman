@@ -10,7 +10,8 @@ public class FallBackController {
 
     @GetMapping("/message")
     public String test() {
-        return "Later";
+        return "Ops, the service is unavailable now \n " +
+                "You may refer to our partner Amazon OR JD to purchase what u want!";
     }
 
 }

@@ -1,11 +1,10 @@
-package com.mircopos.posproducts.model;
+package com.micropos.posproducts.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @Data
 @Builder
@@ -13,10 +12,19 @@ import javax.persistence.GenerationType;
 @AllArgsConstructor
 @Table("products")
 public class Product {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @Column("id")
+    private Long id;
+
+    @Column("name")
     private String name;
+
+    @Column("price")
     private double price;
+
+    @Column("image")
     private String image;
+
+
 }

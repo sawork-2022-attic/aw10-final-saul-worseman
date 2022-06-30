@@ -1,4 +1,4 @@
-package com.micropos.carts.integration;
+package com.mircopos.poscarts.integration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class HttpInboundGateway {
     @Bean
     public IntegrationFlow inGate() {
-        return IntegrationFlows.from(Http.inboundGateway("/api/delivery/check/{cartId}")
+        return IntegrationFlows.from(Http.inboundGateway("/api/carts/check/{cartId}")
                         .requestMapping(m -> m.methods(HttpMethod.GET))
                         .payloadExpression("#pathVariables.cartId"))
                 .headerFilter("accept-encoding", false)
